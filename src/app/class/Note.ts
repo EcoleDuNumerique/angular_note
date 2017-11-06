@@ -18,4 +18,8 @@ export class Note {
         return this.content;
     }
 
+    setDate( date: Date ) {
+        this.date = date;
+    }
+
 }

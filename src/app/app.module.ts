@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http'; // Pour les requêtes ajax avec angular
 
 import { AppComponent } from './components/app.component';
 import { NoteComponent } from './components/note.component';
@@ -12,9 +13,9 @@ import { NoteComponent } from './components/note.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
