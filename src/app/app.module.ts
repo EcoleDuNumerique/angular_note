@@ -5,11 +5,19 @@ import { HttpModule } from '@angular/http'; // Pour les requêtes ajax avec angu
 
 import { AppComponent } from './components/app.component';
 import { NoteComponent } from './components/note.component';
+import { NiemePipe } from './pipes/nieme.pipe';
+import { ResumePipe } from './pipes/resume.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent
+    NoteComponent,
+    NiemePipe,
+    ResumePipe,
+    FilterPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

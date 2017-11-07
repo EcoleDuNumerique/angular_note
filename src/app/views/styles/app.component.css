@@ -58,3 +58,8 @@ label {
     transform: translateX(500px);
     transition: transform 0.5s;
 }
+#custom {
+    position: fixed;
+    bottom: 5px;
+    left: 10px;
+}

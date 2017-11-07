@@ -3,16 +3,13 @@ import { Note } from '../class/Note';
 
 @Component({
     selector: 'app-note',
-    template: `
-        <span (click)="parentRemove()">X</span>
-        <h4> {{ thenote.title }} </h4>
-        <p> {{ thenote.content }} </p>
-        <h6><i> {{ thenote.date | date:'dd-MM-yyyy' }} </i></h6>
-    `,
+    templateUrl: '../views/note.component.html',
     styleUrls: ['../views/styles/app.component.css']
 })
 export class NoteComponent {
 
+    @Input()
+    public color: string;
     // la valeur des input est définie dans le parent !
     // (donc entrée de la valeur exterieure, on utilise donc @Input() )
     @Input()

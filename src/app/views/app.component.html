@@ -1,9 +1,10 @@
+<label [appHighlight]="'red'" > Search : </label><input type="text" [(ngModel)]="search" /> 
 <div id="container">
-
-    <div *ngFor="let note of notes; let i=index" class="note" (click)="selected_note=note" >
+    
+    <div *ngFor="let note of notes | filter:search; let i=index" class="note" (click)="selected_note=note" >
 
         <!-- on apelle le component NoteComponent -->   
-        <app-note [thenote]="note" [index]="i" (event)="remove($event)" ></app-note>
+        <app-note [color]="color" [thenote]="note" [index]="i" (event)="remove($event)" ></app-note>
 
     </div>
 
@@ -20,7 +21,8 @@
             <span>Contenu :</span>
             <input type="text" name="content" #inputContent />
         </label>
-        <button (click)="addNote( inputTitle.value, inputContent.value )" > Ajouter </button>
+        <input type="text" id="datepicker" #datepicker />
+        <button (click)="addNote( inputTitle.value, inputContent.value, datepicker.value )" > Ajouter </button>
     </div>
 
     <div id="edit" *ngIf="selected_note">
@@ -32,6 +34,15 @@
             <span>Contenu :</span>
             <input type="text" name="content" [(ngModel)]="selected_note.content" />
         </label>
+    </div>
+
+    <div id="custom">
+        <input type="range" min=0 max=255 [(ngModel)]="color.red" />
+        <input type="range" min=0 max=255 [(ngModel)]="color.green" />
+        <input type="range" min=0 max=255 [(ngModel)]="color.blue" />
+        R : {{ color.red }}
+        G : {{ color.green }}
+        B : {{ color.blue }}
     </div>
 
 </div>

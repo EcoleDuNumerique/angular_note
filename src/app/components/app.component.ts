@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Note } from '../class/Note';
+import { Color } from '../class/Color';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class AppComponent {
     public displayForm: boolean = false;
     public notes: Note[] = [];
 
+    public search: string = '';
+
     public selected_note: Note;
+
+    public color: Color = new Color();
 
     constructor( private notesservice: NotesService ) {
         this.getNotes();
@@ -21,14 +26,18 @@ export class AppComponent {
 
     getNotes() {
         this.notesservice.getAllNotes().then( (data) => {
-            console.log( data );
+
+            for ( const dnote of data.json() ){
+                this.addNote( dnote.title, dnote.content, dnote.date );
+            }
+
         } );
     }
 
-    addNote( title: string, content: string ) {
-        this.notes.push(
-            new Note(title, content)
-        );
+    addNote( title: string, content: string, datestr: string ) {
+        const note: Note = new Note(title, content);
+        note.setDate( new Date(datestr) );
+        this.notes.push( note );
     }
 
     remove( i: number ) {
