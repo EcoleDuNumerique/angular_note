@@ -10,6 +10,7 @@ import { ResumePipe } from './pipes/resume.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ColorComponent } from './components/color.component';
+import { BackgroundDirective } from './directives/background.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ColorComponent } from './components/color.component';
     NiemePipe,
     ResumePipe,
     FilterPipe,
-    HighlightDirective
+    HighlightDirective,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,
