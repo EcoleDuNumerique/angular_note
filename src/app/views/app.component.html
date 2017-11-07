@@ -36,13 +36,6 @@
         </label>
     </div>
 
-    <div id="custom">
-        <input type="range" min=0 max=255 [(ngModel)]="color.red" />
-        <input type="range" min=0 max=255 [(ngModel)]="color.green" />
-        <input type="range" min=0 max=255 [(ngModel)]="color.blue" />
-        R : {{ color.red }}
-        G : {{ color.green }}
-        B : {{ color.blue }}
-    </div>
+    <app-color id="custom" (event)="color=$event" ></app-color>
 
 </div>

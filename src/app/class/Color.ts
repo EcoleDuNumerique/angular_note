@@ -1,9 +1,9 @@
 export class Color {
 
-    public red;
-    public green;
-    public blue;
-    public alpha;
+    public red: number;
+    public green: number;
+    public blue: number;
+    public alpha: number;
 
     constructor() {
         this.red    = 0;
@@ -12,7 +12,7 @@ export class Color {
         this.alpha  = 1;
     }
 
-    toString() {
+    toString(): string {
         return 'rgba(' + this.red + ', ' + this.green + ', ' + this.blue + ', ' + this.alpha + ')';
     }
 

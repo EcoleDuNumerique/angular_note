@@ -9,11 +9,13 @@ import { NiemePipe } from './pipes/nieme.pipe';
 import { ResumePipe } from './pipes/resume.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ColorComponent } from './components/color.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoteComponent,
+    ColorComponent,
     NiemePipe,
     ResumePipe,
     FilterPipe,

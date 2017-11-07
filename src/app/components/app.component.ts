@@ -16,9 +16,9 @@ export class AppComponent {
 
     public search: string = '';
 
-    public selected_note: Note;
-
     public color: Color = new Color();
+
+    public selected_note: Note;
 
     constructor( private notesservice: NotesService ) {
         this.getNotes();

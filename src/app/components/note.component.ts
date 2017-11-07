@@ -9,7 +9,8 @@ import { Note } from '../class/Note';
 export class NoteComponent {
 
     @Input()
-    public color: string;
+    public color;
+
     // la valeur des input est définie dans le parent !
     // (donc entrée de la valeur exterieure, on utilise donc @Input() )
     @Input()
